@@ -1,0 +1,130 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="650" d:DesignHeight="450"
+		Width="400" Height="450"
+        x:Class="MyApp.MainWindow"
+        Title="MyApp">
+
+	
+	<Grid RowDefinitions="Auto, *,  Auto">
+		<StackPanel>
+			<!-- Title Bar -->
+			<Grid Grid.Row="0" Background="Gray" Height="40" ColumnDefinitions="Auto, Auto, * , Auto, Auto">
+				<Rectangle Grid.Column="0" Fill="Cyan" Width="40"></Rectangle>
+				<Rectangle Grid.Column="1" Fill="Blue" Width="40"></Rectangle>
+				<StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2">
+
+					<Label FontWeight="Black">AVALONIA</Label>
+					<Label>Stuff</Label>
+				</StackPanel>
+				<Rectangle Grid.Column="3" Fill="Beige" Width="40">
+				</Rectangle>
+
+				<Rectangle Grid.Column="4" Fill="Yellow" Width="40"></Rectangle>
+			</Grid>
+		</StackPanel>
+
+		<!-- Main area -->
+
+		<Grid Grid.Row="1" ColumnDefinitions="Auto, Auto, *" Background="#1a1c20">
+			<!-- Volume Bar-->
+			<Grid Width="150" RowDefinitions="*, Auto, Auto" Margin="10">
+				
+				<!-- Volume Meter Gauge -->
+				<Grid Grid.Row="0" 
+					  Margin="10, 0"
+					  RowDefinitions="3*,3*,3*,9*,5*,4*,9*,9*,9*,6*,Auto"
+					  ColumnDefinitions="Auto, *, Auto, Auto">
+			
+					<Grid.Styles>
+						<Style Selector="Label">
+							<Setter Property="Foreground" Value="White"></Setter>
+							<Setter Property="FontSize" Value="12"></Setter>
+							<Setter Property="HorizontalAlignment" Value="Right"></Setter>
+							<Setter Property="Padding" Value="0"></Setter>
+						</Style>
+					</Grid.Styles>
+					
+					<Label Grid.Column="0" Grid.Row="0">0 —</Label>
+					<Label Grid.Column="0" Grid.Row="1">-3 —</Label>
+					<Label Grid.Column="0" Grid.Row="2">-6 —</Label>
+					<Label Grid.Column="0" Grid.Row="3">-9 —</Label>
+					<Label Grid.Column="0" Grid.Row="4">-18 —</Label>
+					<Label Grid.Column="0" Grid.Row="5">-23 —</Label>
+					<Label Grid.Column="0" Grid.Row="6">-27 —</Label>
+					<Label Grid.Column="0" Grid.Row="7">-36 —</Label>
+					<Label Grid.Column="0" Grid.Row="8">-45 —</Label>
+					<Label Grid.Column="0" Grid.Row="9">-54 —</Label>
+					<Label Grid.Column="0" Grid.Row="10"></Label>
+
+					<!-- Volume Bar -->
+					<Grid Grid.Row="0" Grid.Column="1" Grid.RowSpan="11" Width="20" RowDefinitions="23*,37*">
+						
+							<Rectangle Grid.Row="0" Margin="0, 8, 0, -8" Fill="#b05c4e" Width="20"></Rectangle>
+							<Rectangle Grid.Row="1" Margin="0, 8, 0, -8" Fill="White" Width="20"></Rectangle>
+						
+					</Grid>
+					
+					
+					<Label Grid.Column="1" Grid.Row="0">—</Label>
+					<Label Grid.Column="1" Grid.Row="1">—</Label>
+					<Label Grid.Column="1" Grid.Row="2">—</Label>
+					<Label Grid.Column="1" Grid.Row="3">—</Label>
+					<Label Grid.Column="1" Grid.Row="4">—</Label>
+					<Label Grid.Column="1" Grid.Row="5">—</Label>
+					<Label Grid.Column="1" Grid.Row="6">—</Label>
+					<Label Grid.Column="1" Grid.Row="7">—</Label>
+					<Label Grid.Column="1" Grid.Row="8">—</Label>
+					<Label Grid.Column="1" Grid.Row="9">—</Label>
+					<Label Grid.Column="1" Grid.Row="10"></Label>
+
+					<Canvas Grid.Column="3" Grid.RowSpan="11" Width="20">
+						<Rectangle Canvas.Top="0" Fill="White" Width="20" Height="20"></Rectangle>
+					</Canvas>
+					
+				</Grid>
+				
+				<!-- LUFS Label -->
+				<Label Grid.Row="1" Foreground="White" Margin="0,10,0,0" FontSize="20" HorizontalContentAlignment="Center">LUFS</Label>
+				
+				<!-- Volume Bar Buttons -->
+				<StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+					<StackPanel.Styles>
+						<Style Selector="Button">
+							<Setter Property="FontSize" Value="12"/>
+							<Setter Property="Foreground" Value="White"></Setter>
+							<Setter Property="FontWeight" Value="Bold"></Setter>
+							<Setter Property="Background" Value="#7f98c7"></Setter>
+							<Setter Property="CornerRadius" Value="20"></Setter>
+							<Setter Property="Padding" Value="7, 2"></Setter>
+						</Style>
+
+					</StackPanel.Styles>
+					
+					<Button Margin="0, 0, 10, 0">A</Button>
+					<Button>INT-LRA</Button>
+				</StackPanel>
+				
+
+			</Grid>
+			
+			<!-- UTF Measure-->
+			<Rectangle Grid.Column="1" Fill="#ccc" Width="120">  </Rectangle>
+			<!-- Graphic bar-->
+			<Rectangle Grid.Column="2" Fill="Black" >  </Rectangle>
+		</Grid>
+		<!-- Botton Bar -->
+		<Grid Grid.Row="2" Margin="8" ColumnDefinitions="Auto, Auto, *, Auto, Auto, Auto, Auto">
+			<Button Grid.Column="0" Margin="0,0,8,0">Stereo</Button>
+			<Button Grid.Column="1">Youtube</Button>
+			<Button Grid.Column="3" Margin="0,0,8,0">10Secs"</Button>
+			<Button Grid.Column="4">CONTINUOUS</Button>
+			<Rectangle Grid.Column="5" Fill="Red" Width="30" Margin="0, 0,8,0"></Rectangle>
+			<Rectangle Grid.Column="6" Fill="Orange" Width="30"></Rectangle>
+		</Grid>
+
+	</Grid>
+
+</Window>
